@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carmen Rojo · Project Manager, Marketing y Comunicación & Ejecutiva de Cuentas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF3F6;--ink:#2A0A15;--muted:#6E4B58;--deep:#3F0D1C;--accent:#B5124F;--pink:#F59AC2;--blush:#F8DCE7;--surface:#fff;--line:#E3C3D1;color-scheme:only light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3,h4,.big{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem)}
+.hero{background:#3F0D1C;color:#FBEAF1;padding:clamp(2.5rem,8vw,5rem) 0}
+.hero .top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem}
+.hero-left{display:flex;align-items:center;gap:1rem}
+.photo{width:5rem;height:5rem;flex:none;border-radius:50%;border:3px solid #7A2A48;display:grid;place-items:center;font:800 1.1rem "Bricolage Grotesque",sans-serif;overflow:hidden;background:#7A2A48}
+.photo img{width:100%;height:100%;object-fit:cover}
+.nav-link{font:700 .95rem "DM Sans",sans-serif;background:var(--accent);color:#fff;padding:.6rem 1.2rem;border-radius:999px;text-decoration:none;transition:opacity .15s}
+.nav-link:hover{opacity:.9}
+.hero h1{font-size:clamp(3.2rem,10vw,7rem);font-weight:800;color:#fff}
+.hero h1 b{color:var(--pink)}
+.hero p{max-width:48ch;font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.5;margin:1.5rem 0 0}
+.roles{margin-top:1rem;font-weight:700;color:var(--pink);font-size:1.1rem}
+
+/* Secciones de Currículum en la Home */
+.section-cv{padding:clamp(2.5rem,6vw,4.5rem) 0;border-bottom:2px solid var(--line)}
+.section-cv h2{font-size:clamp(1.8rem,4vw,2.4rem);color:var(--accent);margin-bottom:1.5rem}
+.profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.card-box{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:1.75rem}
+.card-box h3{color:var(--deep);font-size:1.3rem;margin-bottom:1rem}
+.exp-item{margin-bottom:1.5rem}
+.exp-item:last-child{margin-bottom:0}
+.exp-item h4{font-size:1.1rem;color:var(--accent)}
+.exp-date{font-size:.85rem;color:var(--muted);font-weight:700;margin-bottom:.4rem;display:block}
+.exp-item ul{margin:0;padding-left:1.1rem;color:var(--ink)}
+.exp-item li{margin-bottom:.3rem;font-size:.95rem}
+.tags-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.tag-skill{font-size:.85rem;font-weight:700;padding:.3rem .8rem;border-radius:999px;background:var(--blush);color:var(--accent)}
+
+/* Bloque de Clientes */
+.board{background:var(--blush);padding:clamp(2.5rem,6vw,4rem) 0}
+.board h2{font-size:clamp(1.9rem,4.5vw,2.8rem);color:var(--accent);margin-bottom:.5rem}
+.sub{color:var(--muted);max-width:56ch;margin:0 0 1.5rem}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.filters button{font:700 .95rem "DM Sans",sans-serif;padding:.5rem 1rem;border-radius:999px;border:2px solid var(--accent);background:none;color:var(--accent);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;min-height:230px;transition:transform .15s,border-color .15s}
+.tile:hover,.tile:focus-visible{transform:translateY(-4px);border-color:var(--accent)}
+
+/* Contenedor optimizado para unificación de escala de logos */
+.logo-box{height:80px;width:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:.5rem}
+.logo-box img{max-height:60px;max-width:85%;object-fit:contain;display:block}
+
+/* Clases específicas para corrección visual individual de logos */
+.logo-zenia { transform: scale(1.6); }
+.logo-eszencia { transform: scale(1.4); }
+
+.client-info{font-size:.9rem;color:var(--muted);display:flex;flex-direction:column;gap:.2rem}
+.client-info strong{color:var(--ink)}
+.tag{align-self:flex-start;margin-top:auto;font-size:.8rem;font-weight:700;padding:.2rem .65rem;border-radius:999px;background:var(--blush);color:var(--accent)}
+
+/* Modal de detalle de cliente */
+dialog{border:0;border-radius:20px;padding:0;max-width:min(550px,94vw);width:100%;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(30,7,16,.65)}
+.dh{background:#3F0D1C;color:#FBEAF1;padding:1.5rem 1.75rem}
+.dh h3{font-size:clamp(1.4rem,3vw,1.8rem);color:#fff}
+.dh p{margin:.3rem 0 0;color:var(--pink);font-weight:700;font-size:.95rem}
+.db{padding:1.5rem 1.75rem 1.75rem}
+.db p{margin:0 0 .75rem;font-size:.95rem}
+.db strong{color:var(--deep)}
+.visit{display:inline-block;margin-top:1rem;font-weight:700;color:var(--accent);text-decoration:none}
+.visit:hover{text-decoration:underline}
+.close{position:sticky;top:0;float:right;margin:.75rem;font:700 .9rem "DM Sans",sans-serif;background:var(--pink);color:#3F0D1C;border:0;border-radius:999px;padding:.45rem .9rem;cursor:pointer;z-index:2}
+
+/* Contacto inferior */
+.contact-section{padding:3rem 0;background:var(--bg)}
+.contact-section p{color:var(--muted);max-width:52ch;margin:0 0 1.25rem}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.8rem 1.3rem;border-radius:10px;background:var(--accent);color:#fff;margin-right:.5rem;margin-bottom:.5rem}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="top">
+    <div class="hero-left">
+      <div class="photo"><img src="img/foto.png" alt="Carmen Rojo"></div>
+      <span>Madrid, España</span>
+    </div>
+    <a class="nav-link" href="#clientes">Ver Cartera de Clientes</a>
+  </div>
+  <h1>Carmen <b>Rojo</b></h1>
+  <p>Project Manager, Ejecutiva de Cuentas y perfil de Marketing y Comunicación. Gestión integral de proyectos y cuentas, estrategia digital, contenidos y producción de eventos y campañas con equipos multidisciplinares e internacionales.</p>
+  <div class="roles">Project Manager · Marketing y Comunicación · Ejecutiva de Cuentas</div>
+</div></header>
+
+<main>
+  <!-- SECCIÓN CURRÍCULUM / HOME -->
+  <section class="section-cv"><div class="wrap">
+    <h2>Perfil y Trayectoria</h2>
+    <div class="profile-grid">
+      
+      <!-- Experiencia Profesional -->
+      <div class="card-box">
+        <h3>Experiencia Profesional</h3>
+        
+        <div class="exp-item">
+          <h4>Project Manager · Formación Psicoterapia</h4>
+          <span class="exp-date">Mayo 2026 – Noviembre 2026 · Madrid</span>
+          <ul>
+            <li>Liderazgo y gestión integral de proyectos con presupuestos superiores a 500.000 €.</li>
+            <li>Coordinación de equipos de trabajo remotos e internacionales de más de 15 personas.</li>
+            <li>Producción y dirección de eventos online de gran formato con cerca de 12.000 inscritos.</li>
+            <li>Coordinación y dirección de rodajes.</li>
+            <li><strong>Impacto:</strong> +15,8M de visualizaciones en YouTube, más de 1,3M € en ventas y crecimiento de +900k seguidores.</li>
+            <li>Supervisión de ecosistemas web, estrategias SEO, analíticas y optimización de métricas de rendimiento.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item" style="margin-top:2rem;">
+          <h4>Ejecutiva de Cuentas & Marketing Specialist · Agencia Amor de Madre</h4>
+          <span class="exp-date">Enero 2024 – Mayo 2026 · Madrid</span>
+          <ul>
+            <li>Gestión global de cuentas clave en sectores de automoción, restauración y educación, liderando la relación con clientes.</li>
+            <li>Definición de estrategia creativa, redacción de copys, desarrollo web, optimización SEO y análisis de keywords.</li>
+            <li>Redacción de guiones para campañas, podcast, vídeos y otros formatos.</li>
+            <li>Coordinación directa de equipos creativos, digitales y audiovisuales para campañas de publicidad, rodajes y producciones fotográficas (3 a 5 campañas mensuales).</li>
+            <li>Gestión de redes sociales, paid media, eventos corporativos y street marketing para clientes de seguros, retail, educación y asociaciones.</li>
+            <li>Montaje de espacios y materiales.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item" style="margin-top:2rem;">
+          <h4>Community Manager · Universidad Complutense de Madrid</h4>
+          <span class="exp-date">Agosto 2022 – Agosto 2023 · Madrid (híbrido)</span>
+          <ul>
+            <li>Creación y planificación de contenido para redes sociales, aumentando la visibilidad y la interacción con la comunidad.</li>
+            <li>Gestión integral de redes sociales y supervisión de la identidad visual digital.</li>
+            <li>Diseño web con optimización SEO y SEM.</li>
+            <li>Fotografía de estudio y retrato para campañas y material institucional.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Formación y Habilidades -->
+      <div class="card-box">
+        <h3>Formación y Habilidades</h3>
+        
+        <div class="exp-item">
+          <h4>Grado en Publicidad y RR.PP.</h4>
+          <span class="exp-date">Universidad Complutense de Madrid (2019–2023)</span>
+        </div>
+
+        <p style="margin:1.75rem 0 0;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);">Formación complementaria</p>
+
+        <div class="exp-item" style="margin-top:.75rem;">
+          <h4>Especialización Tecnológica & IA</h4>
+          <span class="exp-date">200 h · 2026</span>
+          <ul>
+            <li>Desarrollo y diseño de estructuras de organización con IA.</li>
+            <li>Desarrollo de Apps con IA.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item" style="margin-top:1.5rem;">
+          <h4>Project Management: Scrum, Kanban y multiproyecto</h4>
+          <span class="exp-date">150 h · En curso · 2026</span>
+        </div>
+
+        <div class="exp-item" style="margin-top:1.5rem;">
+          <h4>Técnicas de Posicionamiento Web (SEO y Analytics)</h4>
+          <span class="exp-date">60 h · En curso · 2026</span>
+        </div>
+
+        <div class="exp-item" style="margin-top:1.5rem;">
+          <h4>Introducción al Big Data e Inteligencia Artificial</h4>
+          <span class="exp-date">50 h · En curso · 2026</span>
+        </div>
+
+        <div class="exp-item" style="margin-top:1.5rem;">
+          <h4>Herramientas & Competencias</h4>
+          <div class="tags-list">
+            <span class="tag-skill">Asana</span>
+            <span class="tag-skill">Trello</span>
+            <span class="tag-skill">Notion</span>
+            <span class="tag-skill">Excel Avanzado</span>
+            <span class="tag-skill">Meta Business Suite</span>
+            <span class="tag-skill">Canva</span>
+            <span class="tag-skill">Adobe Suite</span>
+            <span class="tag-skill">Claude (Design & Code)</span>
+          </div>
+          <p style="margin-top:1rem; font-size:.95rem; color:var(--muted);"><strong>Idiomas:</strong> Castellano (Nativo), Inglés (B2 EOI).</p>
+        </div>
+      </div>
+
+    </div>
+  </div></section>
+
+  <!-- SECCIÓN CLIENTES Y PROYECTOS -->
+  <section class="board" id="clientes"><div class="wrap">
+    <h2>Cartera de Clientes</h2>
+    <p class="sub">Filtra por sector para consultar los servicios prestados, la agencia asociada y acceder directamente a las plataformas oficiales.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar por sector"></div>
+    <div class="grid" id="grid"></div>
+  </div></section>
+
+  <!-- CONTACTO -->
+  <section class="contact-section"><div class="wrap">
+    <h2>¿Hablamos?</h2>
+    <p>Abierta a nuevas oportunidades profesionales, colaboraciones y proyectos desafiantes.</p>
+    <a class="btn" href="mailto:carmenrojodelgado@gmail.com">carmenrojodelgado@gmail.com</a>
+    <a class="btn" href="tel:+34682815911">682 81 59 11</a>
+    <a class="btn" href="https://www.linkedin.com/in/carmen-rojo-3877461b0/" target="_blank" rel="noopener">LinkedIn</a>
+  </div></section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <button class="close" id="x" type="button">Cerrar</button>
+  <div id="dc"></div>
+</dialog>
+
+<script>
+var CLIENTS = [
+  {
+    "name": "Allianz",
+    "sector": "Seguros",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de eventos corporativos, campañas de paid media",
+    "web": "https://www.allianz.es",
+    "logo": "img/allianz.svg",
+    "logoClass": ""
+  },
+  {
+    "name": "Sanitas",
+    "sector": "Salud",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de eventos corporativos, campañas de paid media",
+    "web": "https://www.sanitas.es",
+    "logo": "img/sanitas.png",
+    "logoClass": ""
+  },
+  {
+    "name": "NZI Helmets",
+    "sector": "Seguridad automoción",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, campañas de street marketing, producciones audiovisuales, campañas de comunicación y medios",
+    "web": "https://www.nzi.es",
+    "logo": "img/nzi.png",
+    "logoClass": ""
+  },
+  {
+    "name": "Zenia Boulevard",
+    "sector": "Retail",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, campañas de street marketing, producciones audiovisuales",
+    "web": "https://zeniaboulevard.es",
+    "logo": "img/zenia.png",
+    "logoClass": "logo-zenia"
+  },
+  {
+    "name": "Habaneras",
+    "sector": "Retail",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, producciones audiovisuales",
+    "web": "https://www.centroidcomercialhabaneras.com",
+    "logo": "img/habaneras.svg",
+    "logoClass": ""
+  },
+  {
+    "name": "Universidad Autónoma de Madrid (UAM)",
+    "sector": "Educación",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Campañas de comunicación y medios, gestión de eventos corporativos, producciones audiovisuales",
+    "web": "https://www.uam.es",
+    "logo": "img/uam.svg",
+    "logoClass": ""
+  },
+  {
+    "name": "Colegio Caude",
+    "sector": "Educación",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, producciones audiovisuales",
+    "web": "https://colegiocaude.com",
+    "logo": "img/caude.png",
+    "logoClass": ""
+  },
+  {
+    "name": "Restaurante Eszencia",
+    "sector": "Restauración",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, producciones audiovisuales",
+    "web": "https://restauranteeszencia.com",
+    "logo": "img/eszencia.jpg",
+    "logoClass": "logo-eszencia"
+  },
+  {
+    "name": "Formación Psicoterapia",
+    "sector": "Educación",
+    "services": "Gestión web, SEO, analíticas, producción de eventos online",
+    "web": "https://formacionpsicoterapia.com",
+    "logo": "img/formacion.webp",
+    "logoClass": ""
+  },
+  {
+    "name": "Campus Myrtea",
+    "sector": "Retail",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, producciones audiovisuales, gestión web",
+    "web": "https://campusmyrtea.com",
+    "logo": "img/myrtea.webp",
+    "logoClass": ""
+  },
+  {
+    "name": "Asociación Europea contra las Leucodistrofias (ELA)",
+    "sector": "Asociación",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de eventos corporativos, producciones audiovisuales, gestión web",
+    "web": "https://elaespana.es",
+    "logo": "img/ela.webp",
+    "logoClass": ""
+  },
+  {
+    "name": "Fundación Margarita Salas",
+    "sector": "Educación",
+    "agencia": "Agencia Amor de Madre",
+    "services": "Gestión de redes sociales, campañas de paid media, gestión de eventos corporativos, campañas de street marketing, producciones audiovisuales, gestión web, campañas de comunicación y medios",
+    "web": "https://fundacionmargaritasalas.es",
+    "logo": "img/margarita.svg",
+    "logoClass": ""
+  }
+];
+
+function initClients() {
+  var grid = document.getElementById('grid');
+  var filters = document.getElementById('filters');
+  var dlg = document.getElementById('dlg');
+  var dc = document.getElementById('dc');
+  var xBtn = document.getElementById('x');
+
+  var sectors = ['Todos'].concat(Array.from(new Set(CLIENTS.map(function(c){ return c.sector; }))));
+
+  function renderGrid(selectedSector) {
+    grid.innerHTML = '';
+    var filtered = selectedSector === 'Todos' ? CLIENTS : CLIENTS.filter(function(c){ return c.sector === selectedSector; });
+    
+    filtered.forEach(function(c){
+      var btn = document.createElement('button');
+      btn.className = 'tile';
+      btn.innerHTML = '<div class="logo-box"><img src="' + c.logo + '" class="' + c.logoClass + '" alt="Logo de ' + c.name + '"></div>' +
+        '<div class="client-info">' +
+          '<div><strong>Sector:</strong> ' + c.sector + '</div>' +
+          (c.agencia ? '<div><strong>Agencia:</strong> ' + c.agencia + '</div>' : '') +
+        '</div>' +
+        '<span class="tag">' + c.sector + '</span>';
+      
+      btn.onclick = function() {
+        dc.innerHTML = '<div class="dh"><h3>' + c.name + '</h3><p>' + c.sector + '</p></div>' +
+          '<div class="db">' +
+            (c.agencia ? '<p><strong>Agencia:</strong> ' + c.agencia + '</p>' : '') +
+            '<p><strong>Servicios prestados:</strong> ' + c.services + '</p>' +
+            '<a class="visit" href="' + c.web + '" target="_blank" rel="noopener">Visitar web oficial &rarr;</a>' +
+          '</div>';
+        dlg.showModal();
+      };
+      grid.appendChild(btn);
+    });
+  }
+
+  filters.innerHTML = '';
+  sectors.forEach(function(sec, idx){
+    var b = document.createElement('button');
+    b.textContent = sec;
+    b.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
+    b.onclick = function() {
+      Array.from(filters.children).forEach(function(child){ child.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      renderGrid(sec);
+    };
+    filters.appendChild(b);
+  });
+
+  xBtn.onclick = function() { dlg.close(); };
+  dlg.onclick = function(e) { if(e.target === dlg) dlg.close(); };
+
+  renderGrid('Todos');
+}
+
+document.addEventListener('DOMContentLoaded', initClients);
+</script>
+</body>
+</html>
